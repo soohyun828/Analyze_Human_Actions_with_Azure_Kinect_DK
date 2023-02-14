@@ -86,12 +86,12 @@ int main()
         k4a_wait_result_t result = k4a_device_get_capture(device, &capture, K4A_WAIT_INFINITE);
         if (result == K4A_WAIT_RESULT_SUCCEEDED)
         {
-            // Body tracking Ã³¸®
+            // Body tracking ì²˜ë¦¬
             k4abt_frame_t body_frame = NULL;
             if (K4A_SUCCEEDED(k4abt_tracker_enqueue_capture(tracker, capture, K4A_WAIT_INFINITE)) &&
                 K4A_SUCCEEDED(k4abt_tracker_pop_result(tracker, &body_frame, K4A_WAIT_INFINITE)))
             {
-                // °¢ ½ºÄÌ·¹ÅæÀÇ Á¶ÀÎÆ® ÁÂÇ¥ Ãâ·Â
+                // ê° ìŠ¤ì¼ˆë ˆí†¤ì˜ ì¡°ì¸íŠ¸ ì¢Œí‘œ ì¶œë ¥
                 uint32_t num_bodies = k4abt_frame_get_num_bodies(body_frame);
                 for (uint32_t i = 0; i < num_bodies; i++)
                 {
