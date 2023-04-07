@@ -1,4 +1,5 @@
 #pragma comment(lib, "k4a.lib")
+#define _CRT_SECURE_NO_WARNINGS
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
@@ -80,18 +81,20 @@ int main()
         return 1;
     }
 
+    FILE* fp = fopen("output.txt", "w");
+
     while (true)
     {
         k4a_capture_t capture = NULL;
         k4a_wait_result_t result = k4a_device_get_capture(device, &capture, K4A_WAIT_INFINITE);
         if (result == K4A_WAIT_RESULT_SUCCEEDED)
         {
-            // Body tracking Ï≤òÎ¶¨
+            // Body tracking √≥∏Æ
             k4abt_frame_t body_frame = NULL;
             if (K4A_SUCCEEDED(k4abt_tracker_enqueue_capture(tracker, capture, K4A_WAIT_INFINITE)) &&
                 K4A_SUCCEEDED(k4abt_tracker_pop_result(tracker, &body_frame, K4A_WAIT_INFINITE)))
             {
-                // Í∞Å Ïä§ÏºàÎ†àÌÜ§Ïùò Ï°∞Ïù∏Ìä∏ Ï¢åÌëú Ï∂úÎ†•
+                // ∞¢ Ω∫ƒÃ∑π≈Ê¿« ¡∂¿Œ∆Æ ¡¬«• √‚∑¬
                 uint32_t num_bodies = k4abt_frame_get_num_bodies(body_frame);
                 for (uint32_t i = 0; i < num_bodies; i++)
                 {
@@ -102,6 +105,7 @@ int main()
                     {
                         k4a_float3_t position = skeleton.joints[j].position;
                         printf("Joint %d: %f, %f, %f\n", j, position.v[0], position.v[1], position.v[2]);
+                        fprintf(fp, "Joint %d: %f, %f, %f\n", j, position.v[0], position.v[1], position.v[2]);
                     }
                 }
 
@@ -111,6 +115,7 @@ int main()
             k4a_capture_release(capture);
         }
     }
+    fclose(fp);
     printf("Finished body tracking processing!\n");
 
     k4abt_tracker_shutdown(tracker);
