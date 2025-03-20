@@ -6,7 +6,8 @@
 - ```skeleton.joints.position.cpp```
 - 실시간으로 촬영 중인 객체에 대해 joint 별 x, y, z 좌표를 출력함.
 - 영상이 저장되거나, 좌표를 따로 저장하지 않음. 단지 viewer처럼 실시간으로 촬영중인 영상의 좌표가 출력되기만 함.<br><br>
-<p align="left"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvPswN%2FbtrMbwR163P%2FaogpmbKUe8EF6bkqYWiytk%2Fimg.png width="60%" height="60%"/></p>
+![Image](https://www.mdpi.com/sensors/sensors-20-06149/article_deploy/html/images/sensors-20-06149-g003.png)
+  [출처: https://www.mdpi.com/1424-8220/20/21/6149]
 
 ## 객체의 joint 별 x, y, z 좌표와 orientation x, y, z좌표 Real-time 모니터링 및 추출
 - ```Simple_Sampling.c```
