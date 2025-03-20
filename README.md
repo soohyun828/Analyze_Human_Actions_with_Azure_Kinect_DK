@@ -2,10 +2,11 @@
 ## 1. Setup
 - Visual Studio 솔루션 탐색기에서 우클릭>>nuget 패키지 관리>>Microsoft.Azure.Kinect.Sensor와 Microsoft.Azure.Kinect.BodyTracking 설치<br><br>
 
-## 객체의 joint 별 x, y, z 좌표 Real-time 모니터링
+## 객체의 joint 별 x, y, z 좌표 Real-time 모니터링 (Body Tracking)
 - ```skeleton.joints.position.cpp```
 - 실시간으로 촬영 중인 객체에 대해 joint 별 x, y, z 좌표를 출력함.
 - 영상이 저장되거나, 좌표를 따로 저장하지 않음. 단지 viewer처럼 실시간으로 촬영중인 영상의 좌표가 출력되기만 함.<br><br>
+<p align="left"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvPswN%2FbtrMbwR163P%2FaogpmbKUe8EF6bkqYWiytk%2Fimg.png width="60%" height="60%"/></p>
 
 ## 객체의 joint 별 x, y, z 좌표와 orientation x, y, z좌표 Real-time 모니터링 및 추출
 - ```Simple_Sampling.c```
