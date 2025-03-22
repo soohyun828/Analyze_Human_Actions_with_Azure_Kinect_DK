@@ -1,4 +1,4 @@
-# allbigdata-kinnect-DX1
+# allbigdata-kinect-DX1
 ## 1. Setup
 - Visual Studio 솔루션 탐색기에서 우클릭>>nuget 패키지 관리>>Microsoft.Azure.Kinect.Sensor와 Microsoft.Azure.Kinect.BodyTracking 설치<br><br>
 
@@ -24,7 +24,7 @@
   [저장 결과 예시]<br>
   ![Image](https://github.com/user-attachments/assets/c0aa2046-eafc-4690-8604-20190ac1c227)
 
-## 2. Examining Angel Measurements to Classify Correct and Wrong Movements using Neural Networks
+## 2. Examining Angle Measurements to Classify Correct and Wrong Movements using Neural Networks
 - ```Dataset training &testing by MLFNN.ipynb```
 - ```joint.data.extraction_iteration.ipynb``` 를 통해서 얻은 팔과 몸통 간의 각도 분석 데이터를 이용하여 NN을 학습시키고, 영상 속 사람의 움직임이 정상적인지, 비정상적인지 검토한다.
 - 의료 등 올바른 움직임을 하고 있는지 평가하고 진단해야 하는 산업에서 이용 가능하다. 
